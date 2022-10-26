@@ -1,0 +1,25 @@
+@cohorts.map do |cohort|
+  {
+    id: cohort.id,
+    start_date: cohort.start_date,
+    gmail_calendar: cohort.gmail_calendar,
+    users: cohort.users.map do |user|
+      {
+        id: user.id,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        submissions: user.submissions.map do |submission|
+          {
+            id: submission.id,
+            answer: submission.answer,
+            viewed_by_admin: submission.viewed_by_admin,
+            grade: submission.grade,
+            redone: submission.redone,
+            comments: submission.comments,
+          }
+        end,
+      }
+    end,
+  }
+end

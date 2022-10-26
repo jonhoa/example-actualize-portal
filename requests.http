@@ -1,0 +1,5 @@
+### USERS INDEX
+GET http://localhost:3000/users.json
+
+### COHORTS INDEX
+GET http://localhost:3000/cohorts.json
